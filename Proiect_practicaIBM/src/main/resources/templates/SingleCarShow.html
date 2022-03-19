@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show car by registration number</title>
+</head>
+<body>
+<div>
+   <!-- <table>
+        <tr th:each="car:${carsList}">
+            <th>Marca</th>
+            <td th:text="${car.marca}"></td>
+        </tr>
+
+        <tr  th:each="car:${carsList}">
+            <th>Model</th>
+            <td th:text="${car.model}"></td>
+        </tr>
+        <tr th:each="car:${carsList}">
+
+            <th>Putere</th>
+            <td th:text="${car.power}"></td>
+        </tr>
+        <tr th:each="car:${carsList}">
+            <th>Tipul caroseriei</th>
+            <td th:text="${car.type}"></td>
+        </tr>
+
+        <tr th:each="car:${carsList}">
+            <th>An</th>
+            <td th:text="${car.an}"></td>
+        </tr>
+
+        <tr th:each="car:${carsList}">
+            <th>Consum</th>
+            <td th:text="${car.consum}"></td>
+        </tr>-->
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td>Număr înmatriculare</td>
+                <td>Marca</td>
+                <td>Model</td>
+                <td>Putere</td>
+                <td>Tip</td>
+                <td>An aparitie</td>
+                <td>Consum (100 km)</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><a th:href="@{/cars/} + ${car.regnumber}" th:text="${car.regnumber}"></a></td>
+                <td th:text="${car.marca}"></td>
+                <td th:text="${car.model}"></td>
+                <td th:text="${car.power}"></td>
+                <td th:text="${car.type}"></td>
+                <td th:text="${car.an}"></td>
+                <td th:text="${car.consum}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <!--<tr>
+            <td colspan="2" align="right">  <a th:href="@{/cars/} + ${car.regnumber}+ '/SingleCarEdit'" th:text="#{command.edit}">EDIT</a></td>
+        </tr>-->
+    </table>
+</div>
+
+
+</body>
+</html>

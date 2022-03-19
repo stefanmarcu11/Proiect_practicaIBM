@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <title>Add new cars</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <style type="text/css">
+        label{
+            display:inline-block;
+            width: 200px;
+        }
+        #formdata{
+            height: 90vh;
+        }
+
+        #formdata div {
+            margin-bottom: 10px;
+            width: 60%;
+        }
+        #formdata div input {
+            width: 65%;
+        }
+
+        .button {
+            display: flex;
+            gap: 20px;
+            justify-content:center;
+            margin-top: 10px;
+        }
+        footer{
+            background:dodgerblue;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 20%;
+            color:white;
+            text-align: center;
+        }
+        footer p{
+            padding: 20px 0;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div>
+            <a class="navbar-brand" href="home"><img class="imagenav" type="image/png" th:src="@{/images/garage_v2.png}"></a>
+            <a class="navbar-brand" href="home">Auto D&S</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="cars">Cars</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addcar">Registration Cars</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Garage
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="garageshow">Show List</a></li>
+                        <li><a class="dropdown-item" href="addgarage">Registration Garage</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<form id="formdata" action="#" th:action="@{/addcars}" th:object="${cars}" method="post" style="display: flex; flex-direction:column; justify-content:center; align-items:center;">
+   <div>
+       <label><b>Număr de înregistrare</b></label>
+       <input placeholder="Adăugați numărul de înmatriculare" type="text" th:field="*{regnumber}" name="regnumber"/><br/>
+   </div>
+    <div>
+        <label><b>Marcă</b></label>
+        <input placeholder="Adăugați marca mașinii" type="text" th:field="*{marca}" name="marca"/><br/>
+    </div>
+    <div>
+        <label><b>Model</b></label>
+        <input placeholder="Adăugați modelul mașinii" type="text" th:field="*{model}" name="model"/><br/>
+    </div>
+    <div>
+        <label><b>Putere</b></label>
+        <input placeholder="Adăugați puterea" type="text" th:field="*{power}" name="power"/><br/>
+    </div>
+    <div>
+        <label><b>Tip carosabilă</b></label>
+        <input placeholder="Adăugați tipul carosabilei" type="text" th:field="*{type}"name="type"/><br/>
+    </div>
+    <div>
+        <label><b>An</b></label>
+        <input placeholder="Adăugați anul fabricării" type="text" th:field="*{an}" name="an"/><br/>
+    </div>
+    <div>
+        <label><b>Consum (100 km)</b></label>
+        <input placeholder="Adăugați consumul" type="text" th:field="*{consum}" name="consum"/><br/>
+    </div>
+
+    <div class="button">
+        <a href="addgarage"><button id="btadd" type="submit" class="btn btn-outline-primary"><img class="img_save" ty pe="image/png" th:src="@{/images/floppy-disk.png}">Save</button></a>
+        <a href="addgarage"><button id="btreset" type="reset" class="btn btn-outline-primary"><img class="img_reset" type="image/png" th:src="@{/images/restart.png}">Reset</button></a>
+    </div>
+</form>
+<footer><p>Web Development with Spring Boot, IBM Romania</p></footer>
+</body>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+</html>

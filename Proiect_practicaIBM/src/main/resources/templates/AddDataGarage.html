@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <title>Add new garage</title>
+    <style type="text/css">
+        label{
+            display:inline-block;
+            width: 200px;
+        }
+        #formdata{
+            padding-top: 30px;
+        }
+        #formdata div {
+            margin-bottom: 10px;
+            width: 60%;
+        }
+
+        #formdata div input {
+            width: 65%;
+        }
+
+        .button {
+            display: flex;
+            gap: 20px;
+            justify-content:center;
+            margin-top: 10px;
+        }
+        footer{
+            background:dodgerblue;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 20%;
+            color: white;
+            text-align: center;
+        }
+        footer p{
+            padding: 60px 0;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div>
+            <a class="navbar-brand" href="home"><img class="imagenav" type="image/png" th:src="@{/images/garage_v2.png}"></a>
+            <a class="navbar-brand" href="home">Auto D&S</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="cars">Cars</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addcars">Registration Cars</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Garage
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="garageshow">Show List</a></li>
+                        <li><a class="dropdown-item" href="addgarage">Registration Garage</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <form id="formdata" action="#" th:action="@{/addgarage}" th:object="${garage}" method="post" style="display: flex; flex-direction:column; justify-content:center; align-items:center;">
+            <div>
+                <label><b>Address</b></label>
+                <input placeholder="Add address" type="text" th:field="*{address}" name="address"/><br/>
+            </div>
+            <div>
+                <label><b>Phone</b></label>
+                <input placeholder="Add number phone" type="text" th:field="*{phone}" name="phone"/><br/>
+            </div>
+        <div>
+            <label><b>Dimensiune</b></label>
+            <input placeholder="Introduceți numărul de mașini" type="text" th:field="*{nr_cars}" name="nr_cars"/><br/>
+        </div>
+    <div class="button">
+        <a href="addgarage"><button id="btadd" type="submit" class="btn btn-outline-primary"><img class="image_save" th:src="@{/images/floppy-disk.png}">Save</button></a>
+        <a href="addgarage"><button id="btreset" type="reset" class="btn btn-outline-primary"><img class="image_reset" th:src="@{/images/restart.png}">Reset</button></a>
+    </div>
+
+
+
+    </form>
+</body>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+<footer><p>Web Development with Spring Boot, IBM Romania</p></footer>
+</html>

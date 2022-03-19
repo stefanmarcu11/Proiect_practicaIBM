@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+
+    <div class="container-fluid">
+        <div>
+            <a class="navbar-brand" href="home"><img class="imagenav" type="image/png" th:src="@{/images/garage_v2.png}"></a>
+            <a class="navbar-brand" href="home">Auto D&S</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="cars">Cars</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addcars">Registration cars</a>
+
+                </li>
+                <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Garages
+                        </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li></li><a class="dropdown-item" href="garageshow">Show List</a></li>
+                        <li><a class="dropdown-item" href="addgarage">Registration garages</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container1">
+    <img type="image/png" th:src="@{images/cars.png}">
+</div>
+<div class="container2">
+
+</div>
+</body>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</html>
